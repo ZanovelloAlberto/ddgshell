@@ -5,7 +5,7 @@ You can use [Github Contents API](https://developer.github.com/v3/repos/contents
 
 ### Command line:
 
-> curl https://codeload.github.com/***[owner]***/***[repo]***/tar.gz/master | \
+> curl https://codeload.github.com/ ***[owner]*** / ***[repo]*** /tar.gz/master | \
       tar -xz --strip=2 ***[repo]***-master/***[folder_path]***
 
 ---
