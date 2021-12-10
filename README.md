@@ -5,14 +5,14 @@ You can use [Github Contents API](https://developer.github.com/v3/repos/contents
 
 ### Command line:
 
-> curl https://codeload.github.com/***[owner]***/***[repo]***/tar.gz/master | \
+> curl https://codeload.github.com/ ***[owner]*** / ***[repo]*** /tar.gz/master | \
       tar -xz --strip=2 ***[repo]***-master/***[folder_path]***
 
 ---
 **For example,**   
-if you want to download [examples/with-apollo/](https://github.com/zeit/next.js/tree/master/examples/with-apollo) folder from [zeit/next.js](https://github.com/zeit/next.js), you can type this:   
+if you want to download [docs/](https://github.com/ZanovelloAlberto/ddgshell_/tree/master/docs) folder from [ZanovelloAlberto/ddgshell_](https://github.com/ZanovelloAlberto/ddgshell_), you can type this:   
 
 ```sh
-        curl https://codeload.github.com/zeit/next.js/tar.gz/master | \
-        tar -xz --strip=2 next.js-master/examples/with-apollo
+        curl https://codeload.github.com/ZanovelloAlberto/ddgshell_/tar.gz/master | \
+        tar -xz --strip=2 ddgshell_-master/docs
 ```
