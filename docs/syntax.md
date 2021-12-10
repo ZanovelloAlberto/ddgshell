@@ -1,4 +1,4 @@
-
+# Bash helper
 
 ## string
 
@@ -31,6 +31,24 @@ echo $(( 2#101011 ))  # Base conversion, not a comment.
 
 ```${build_list[@]:0}``` to print all value from the fist one <br/>
 ```${build_list[@]:4}``` to print all value from the forth
+<hr/>
+<br/>
 
 
+# Python helper
 
+### get Stdin
+
+this script will print the stdin:
+> ```echo "this is the stdin" | python ./mycode.py``` <br/>
+> ```this in the stdin``` <br/>
+
+```py
+import sys
+
+#take stdin
+for url in sys.stdin:
+    if 'q' == url.rstrip():
+        break
+print(url)
+    ```

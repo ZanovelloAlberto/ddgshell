@@ -1,3 +1,11 @@
 from urllib import parse
-url = "http://www.example.org/default.html?ct=32&op=92&item=98"
+import sys
+
+
+# take stdin
+for url in sys.stdin:
+    if 'q' == url.rstrip():
+        break
+
+
 print(parse.urlsplit(url).path)
