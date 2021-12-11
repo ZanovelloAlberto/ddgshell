@@ -51,4 +51,18 @@ for url in sys.stdin:
     if 'q' == url.rstrip():
         break
 print(url)
-    ```
+```
+
+
+### run Command
+
+n all officially maintained versions of Python, the simplest approach is to use the subprocess.check_output function:
+
+```py
+> subprocess.check_output(['ls', '-l'])
+b'total 0\n-rw-r--r--  1 memyself  staff  0 Mar 14 11:04 files\n'
+``` 
+
+check_output runs a single program that takes only arguments as input.1 It returns the result exactly as printed to stdout. If you need to write input to stdin, skip ahead to the run or Popen sections. If you want to execute complex shell commands, see the note on shell=True at the end of this answer.
+
+The check_output function works in all officially maintained versions of Python. But for more recent versions, a more flexible approach is available.

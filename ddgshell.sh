@@ -62,8 +62,9 @@ gh_repo_download() {
   local repo=$2
   local branch=$3 
   local path=$4
-        #   curl https://codeload.github.com/${owner}/${repo}/tar.gz/${branch} | \
-        # tar -xz --strip=2 ${repo}-${branch}/${path}
+  local location=$5
+  curl -o ${location} https://codeload.github.com/${owner}/${repo}/tar.gz/${branch} | \
+  tar -xz --strip=2 ${repo}-${branch}/${path}
   msg "$msg"
 }
 
@@ -115,9 +116,9 @@ parse_params() {
     -v | --verbose) set -x ;;
     --no-color) NO_COLOR=1 ;;
     -f | --flag) flag=true ;; # example flag
-    -gh | --github) 
-    param="${2-}"
-     ;;
+    # -gh | --github) 
+    # param="${2-}"
+    #  ;;
     -p | --param) # example named parameter
       param="${2-}"
       shift
@@ -128,11 +129,11 @@ parse_params() {
     shift
   done
 
-#   args=("$@")
+  args=("$@")
 
   # check required params and arguments
-#   [[ -z "${param-}" ]] && die "Missing required parameter: param"
-#   [[ ${#args[@]} -eq 0 ]] && die "Missing script arguments"
+  [[ -z "${param-}" ]] && die "Missing required parameter: param"
+  [[ ${#args[@]} -eq 0 ]] && die "Missing script arguments"
 
   return 0
 }

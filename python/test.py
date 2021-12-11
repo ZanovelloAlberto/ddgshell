@@ -1,6 +1,6 @@
 from urllib import parse
 import sys
-
+# https://github.com/ZanovelloAlberto/ddgshell
 
 # take stdin
 for url in sys.stdin:
@@ -8,4 +8,10 @@ for url in sys.stdin:
         break
 
 
-print(parse.urlsplit(url).path)
+
+splitted = parse.urlsplit(url).path.split("/")
+
+
+print(splitted)
+
+print("OWNER=")

@@ -16,3 +16,15 @@ if you want to download [docs/](https://github.com/ZanovelloAlberto/ddgshell_/tr
         curl https://codeload.github.com/ZanovelloAlberto/ddgshell_/tar.gz/master | \
         tar -xz --strip=2 ddgshell_-master/docs
 ```
+
+idea to see if it work: 
+```sh
+shell_funcion(){
+
+}
+
+VAR=$(python <<< "print(['uno','due','tre'])")
+
+shell_funtion $VAR 
+
+```

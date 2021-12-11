@@ -38,15 +38,17 @@
     
 #     "
 
+sfa/df="cioa"
 
+VAR=$(python <<< "print(['uno','due','tre'])")
+echo $VAR
 
-    
+echo $sdf/df
 
+# build_string="100 99 98"
+# build_list=($build_string)
 
-build_string="100 99 98"
-build_list=($build_string)
-
-echo $build_list
-for i in "${build_list[@]:0}"
-   do  echo "i: " $i
-done
+# echo $build_list
+# for i in "${build_list[@]:0}"
+#    do  echo "i: " $i
+# done

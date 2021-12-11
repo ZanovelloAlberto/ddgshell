@@ -1,7 +1,7 @@
 ## python
 
 [url-parameters](https://stackoverflow.com/questions/21584545)
-
+[url-path-sections](https://stackoverflow.com/questions/7894384/)
 
 <hr/>
 <br/>
