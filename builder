@@ -4,6 +4,7 @@ import sys
 import os
 import subprocess
 import shutil
+import stat
 
 # --- DEFAULT VALUE ---
 BUILD_ARGS="-h"
@@ -11,15 +12,14 @@ BUILD_ARGS="-h"
 # directories
 OUTDIR="build"
 PYDIR="python"
-SRCDIR="src"
+SRCDIR="bash"
 
 OUT="ddgshell.sh"
 
-MAINBASH="{}/ddgshell.sh".format(SRCDIR)
+MAINBASH="{}/main.sh".format(SRCDIR)
 OUTPATH="{}/{}".format(OUTDIR,OUT)
 
-# --- SETUP ---
-# user side
+# funciotns
 
 def build():
     clear()
@@ -27,8 +27,6 @@ def build():
     os.mkdir(OUTDIR)
     f = open(OUTPATH, "w")
     f.write("#!/usr/bin/bash\n")
-    
-
 
     for filename in os.listdir("python/"):
         if filename.endswith(".py"): 
@@ -36,17 +34,13 @@ def build():
             f.write("{}='".format(name))
             f.write(open(PYDIR + "/" + filename).read())
             f.write("'\n")
-    
-            # os.system("echo \"{}='\" >> {}".format(name,OUTPATH))
-            # os.system("cat {}/{} >> {}".format(PYDIR,filename,OUTPATH))
-            # os.system("echo \"'\" >> {}".format(OUTPATH))
             continue    
 
-    # os.system("cat {} >> {}".format(MAINBASH,OUTPATH))
     f.write(open(MAINBASH).read())
-
-    print("done")
     f.close()
+    os.chmod(OUTPATH,os.stat(OUTPATH).st_mode | stat.S_IEXEC)
+    os.system("./{} -h".format(OUTPATH))
+    print("done")
 
 
 def clear():
@@ -56,15 +50,13 @@ def clear():
 
 
 def run():
-
-    cmd = "ls"
-    process = subprocess.Popen(cmd.split('\n'), stdout=subprocess.PIPE)
-    output, error = process.communicate()
-    print(output.decode("utf-8").split())
+    build()
+    os.s
 
 
-def prime():
-    print("prime")
+def install():
+    build()
+
 
 options = {
     "build" : build,
