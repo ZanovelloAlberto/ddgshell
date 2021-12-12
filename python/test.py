@@ -13,3 +13,4 @@ splitted = parse.urlsplit(url).path.split("/")
 print(splitted)
 
 print("OWNER=")
+
