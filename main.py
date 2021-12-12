@@ -3,18 +3,50 @@
 # import modules used here -- sys is a very standard one
 import sys
 import argparse
-import logging
+import logging  
+from urllib import parse
+import requests
 
-# Gather our code in a main() function
+# --- FUNCTIONS ---
+
+def version():
+        print("""ddghub (DDGHUB) 1.0.0
+MIT License 2021.
+    """)
+
+def downlaod(url:str):
+    parse.urlsplit(url).path.split("/")
+    owner=""
+    repo=""
+    branch=""
+
+    r = requests.get('https://codeload.github.com/{}/{}/tar.gz/{}'.format(owner,repo,branch))
+    print(r)
+#   curl -o ${location} https://codeload.github.com/${owner}/${repo}/tar.gz/${branch} |
+#     tar -xz --strip=2 ${repo}-${branch}/${path}
+
+
+
+options = {
+    "version":version,
+    "download": downlaod
+}
+
+
+
+# --- Gather our code in a main() function ---
 
 
 def main(args, loglevel):
     logging.basicConfig(format="%(levelname)s: %(message)s", level=loglevel)
 
     # TODO Replace this with your actual code.
-    print("Hello there.")
+    # print("Hello there.")
     logging.info("You passed an argument.")
-    logging.debug("Your Argument: %s" % args.argument)
+    # logging.debug("Your Argument: %s" % args.argument)
+    print(args.argument)
+    options[args.argument]("")
+
 
 
 # Standard boilerplate to call the main() function to begin
@@ -37,6 +69,12 @@ if __name__ == '__main__':
         "--outdir",
         help="place the output into <file>.",
         action="store_true")
+
+    parser.add_argument(
+        "version",
+        help="version",
+        action="store_true")
+
     parser.add_argument(
         "-v",
         "--verbose",
@@ -51,3 +89,6 @@ if __name__ == '__main__':
         loglevel = logging.INFO
 
     main(args, loglevel)
+
+
+
