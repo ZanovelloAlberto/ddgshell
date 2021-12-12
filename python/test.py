@@ -7,8 +7,6 @@ for url in sys.stdin:
     if 'q' == url.rstrip():
         break
 
-
-
 splitted = parse.urlsplit(url).path.split("/")
 
 

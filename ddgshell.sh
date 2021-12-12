@@ -5,8 +5,9 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 usage() {
-  cat << EOF # remove the space between << and EOF, this is due to web plugin issue
-Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] [-f] -p param_value arg1 [arg2...]
+  cat <<EOF # remove the space between << and EOF, this is due to web plugin issue
+Usage: $(
+    basename "${BASH_SOURCE[0]}") [-h] [-v] [-f] -p param_value arg1 [arg2...]
 
 Script description here.
 
@@ -49,8 +50,8 @@ die() {
 split_by_slash() {
   local IFS=/
   local foo
-  set -f # Disable glob expansion
-  foo=( $@ ) # Deliberately unquoted 
+  set -f   # Disable glob expansion
+  foo=($@) # Deliberately unquoted
   set +f
   printf '%d\n' "${#foo[@]}"
   printf '%s\n' "${foo[@]}"
@@ -60,47 +61,14 @@ gh_repo_download() {
 
   local owner=$1
   local repo=$2
-  local branch=$3 
+  local branch=$3
   local path=$4
   local location=$5
-  curl -o ${location} https://codeload.github.com/${owner}/${repo}/tar.gz/${branch} | \
-  tar -xz --strip=2 ${repo}-${branch}/${path}
+  curl -o ${location} https://codeload.github.com/${owner}/${repo}/tar.gz/${branch} |
+    tar -xz --strip=2 ${repo}-${branch}/${path}
   msg "$msg"
 }
 
-parse_gh_link(){
-
-    local link=$1
-    # extract the protocol
-    proto="$(echo $1 | grep :// | sed -e's,^\(.*://\).*,\1,g')"
-    # remove the protocol
-    url="$(echo ${1/$proto/})"
-    # extract the user (if any)
-    user="$(echo $url | grep @ | cut -d@ -f1)"
-    # extract the host and port
-    hostport="$(echo ${url/$user@/} | cut -d/ -f1)"
-    # by request host without port    
-    host="$(echo $hostport | sed -e 's,:.*,,g')"
-    # by request - try to extract the port
-    port="$(echo $hostport | sed -e 's,^.*:,:,g' -e 's,.*:\([0-9]*\).*,\1,g' -e 's,[^0-9],,g')"
-    # extract the path (if any)
-    path="$(echo $url | grep / | cut -d/ -f2-)"
-
-    echo $proto
-    echo $url
-    echo $user
-    echo $hostport
-    echo $host
-    echo $port
-    echo $path
-
-}
-
-dialog_gh_repo_download(){
-    local owner=$1
-  local repo=$2 # default exit status 1
-  local branch=$3 # default exit status 1
-}
 
 
 
@@ -112,11 +80,14 @@ parse_params() {
 
   while :; do
     case "${1-}" in
-    -h | --help) usage; break;;
+    -h | --help)
+      usage
+      break
+      ;;
     -v | --verbose) set -x ;;
     --no-color) NO_COLOR=1 ;;
     -f | --flag) flag=true ;; # example flag
-    # -gh | --github) 
+    # -gh | --github)
     # param="${2-}"
     #  ;;
     -p | --param) # example named parameter
@@ -138,16 +109,12 @@ parse_params() {
   return 0
 }
 
-
 parse_params "$@"
 setup_colors
 
 # script logic here
 # if [ "$github_link" != "" ];then
 parse_gh_link "https://discord.com/channels/758693578121281536/888771074202939412"
-
-
-
 
 msg "${RED}Read parameters:${NOFORMAT}"
 msg "- flag: ${flag}"

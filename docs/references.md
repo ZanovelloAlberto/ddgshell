@@ -16,6 +16,12 @@
 
 [download-a-folder-from-github](https://stackoverflow.com/questions/33066582)
 
+[multiline-assignment-in-bash](https://stackoverflow.com/questions/11234577)
+
+[functions-in-makefiles](https://stackoverflow.com/questions/6783243/)
+
+
+
 <!-- [download-a-folder-from-github](https://stackoverflow.com/questions/33066582) -->
 <hr/>
 <br/>
