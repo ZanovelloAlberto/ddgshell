@@ -1,5 +1,5 @@
 ## git directory downloader
-the target of the project is provide a github tool to download your directories locally 
+the target of the project is provide a github tool to download your github repo directories locally 
 
 You can use [Github Contents API](https://developer.github.com/v3/repos/contents/#get-archive-link) to get an archive link and `tar` to retrieve a specified folder.
 
