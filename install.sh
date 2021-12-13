@@ -1,4 +1,4 @@
 
 
-mv main.py /usr/bin/ddghub
-ddghub --version
+cp main.py /usr/bin/ddghub
+ddghub version
