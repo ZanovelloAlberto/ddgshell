@@ -1,4 +1,6 @@
+# bin/bash
 
-
-cp main.py /usr/bin/ddghub
+sudo apt install python3 python3-pip
+pip install argparse
+sudo cp main.py /usr/bin/ddghub
 ddghub version

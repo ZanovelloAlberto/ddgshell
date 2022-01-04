@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # import modules used here -- sys is a very standard one
 import argparse
@@ -9,7 +9,7 @@ from urllib.request import urlopen
 
 # --- FUNCTIONS ---
 
-def version(args: argparse.Namespace):
+def version():
     print("""ddghub (DDGHUB) 1.0.0
 MIT License 2021.""")
 
@@ -18,12 +18,12 @@ def downlaod(args: argparse.Namespace):
 
     print(args)
     if (args.link == None):
-        return
+        return "pass github link as args"
     
     arr = parse.urlsplit(args.link).path.split("/", maxsplit=5)
 
     if (len(arr) < 2):
-        return
+        return "invalid link"
 
     print(arr)
     owner = arr[1]
@@ -37,7 +37,7 @@ def downlaod(args: argparse.Namespace):
 
     os.system("""curl https://codeload.github.com/{}/{}/tar.gz/{} | \
         tar -xz -C {} --strip=2 {}-{}/{} """.format(owner, repo, branch, outdir, repo, branch, repoPath))
-
+    return "done"
 
 options = {
     "version": version,
@@ -51,7 +51,12 @@ def main(args: argparse.Namespace, loglevel):
     logging.basicConfig(format="%(levelname)s: %(message)s", level=loglevel)
 
     logging.info("You passed an argument.")
-    options[args.argument](args)
+    if(args.version):
+        version()
+    elif(args.link != ""):
+        print(downlaod(args))
+    else:
+        print("no link found")
 
 
 # the program.
@@ -64,8 +69,8 @@ if __name__ == '__main__':
         fromfile_prefix_chars='@')
 
     parser.add_argument(
-        "argument",
-        help="pass ARG to the program",
+        "link",
+        help="the github link of the repo/directory.",
         metavar="ARG")
 
     parser.add_argument(
@@ -75,16 +80,19 @@ if __name__ == '__main__':
         metavar="ARG")
 
     parser.add_argument(
-        "-l",
-        "--link",
-        help="the github link of the repo/directory.",
-        metavar="ARG")
+        "--version",
+        help="show version",
+        metavar="store_true")
 
     parser.add_argument(
         "-v",
         "--verbose",
         help="increase output verbosity",
         action="store_true")
+    
+    Dict = {}
+    Dict["-o"] = "./"
+    parser.set_defaults(outdir="./")
     args = parser.parse_args()
 
     # Setup logging

@@ -1,9 +1,6 @@
 ## python
 
-[url-parameters](https://stackoverflow.com/questions/21584545)
-[url-path-sections](https://stackoverflow.com/questions/7894384/)
-https://stackoverflow.com/questions/4256107/running-bash-commands-in-p
-https://stackoverflow.com/questions/10377998/how-can-i-iterate-over-files-in-a-given-directory
+
 <hr/>
 <br/>
 

@@ -3,28 +3,23 @@ the target of the project is provide a github tool to download your github repo 
 
 You can use [Github Contents API](https://developer.github.com/v3/repos/contents/#get-archive-link) to get an archive link and `tar` to retrieve a specified folder.
 
-### Command line:
+### Shell command to dowload repo:
 
-> curl https://codeload.github.com/ ***[owner]*** / ***[repo]*** /tar.gz/master | \
-      tar -xz --strip=2 ***[repo]***-master/***[folder_path]***
-
----
-**For example,**   
-if you want to download [docs/](https://github.com/ZanovelloAlberto/ddgshell_/tree/master/docs) folder from [ZanovelloAlberto/ddgshell_](https://github.com/ZanovelloAlberto/ddgshell_), you can type this:   
+this shell command get our result
 
 ```sh
-        curl https://codeload.github.com/ZanovelloAlberto/ddgshell_/tar.gz/master | \
-        tar -xz --strip=2 ddgshell_-master/docs
+curl https://codeload.github.com/ ***[owner]*** / ***[repo]*** /tar.gz/master | \
+tar -xz --strip=2 ***[repo]***-master/***[folder_path]***
 ```
 
-idea to see if it work: 
-```sh
-shell_funcion(){
 
-}
+## References
+### python
 
-VAR=$(python <<< "print(['uno','due','tre'])")
+- [url-parameters](https://stackoverflow.com/questions/21584545)
 
-shell_funtion $VAR 
+- [url-path-sections](https://stackoverflow.com/questions/7894384/)
 
-```
+- [running-bash-commands](https://stackoverflow.com/questions/4256107)
+
+- [iterate-files](https://stackoverflow.com/questions/10377998)
