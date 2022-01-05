@@ -23,8 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
+      - name: check pwd
+        run: ls
+        
       - name: install :)
-        run: chmod +x install.sh && ./install.sh
+        run: chmod +x ${{ env.GITHUB_WORKSPACE }}install.sh && .${{ env.GITHUB_WORKSPACE }}/install.sh
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
