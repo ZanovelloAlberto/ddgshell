@@ -7,6 +7,17 @@ import os
 from urllib import parse
 from urllib.request import urlopen
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # --- FUNCTIONS ---
 
 def version():
@@ -16,7 +27,6 @@ MIT License 2021.""")
 
 def downlaod(args: argparse.Namespace):
 
-    print(args)
     if (args.link == None):
         return "pass github link as args"
     
@@ -25,7 +35,7 @@ def downlaod(args: argparse.Namespace):
     if (len(arr) < 2):
         return "invalid link"
 
-    print(arr)
+    print(bcolors.OKGREEN +"\n ... started dowload ...\n" +bcolors.ENDC)
     owner = arr[1]
     repo = arr[2]
     branch = arr[4]
@@ -39,19 +49,14 @@ def downlaod(args: argparse.Namespace):
         tar -xz -C {} --strip=2 {}-{}/{} """.format(owner, repo, branch, outdir, repo, branch, repoPath))
     return "done"
 
-options = {
-    "version": version,
-    "download": downlaod
-}
 
 # --- Gather our code in a main() function ---
 
 
 def main(args: argparse.Namespace, loglevel):
-    logging.basicConfig(format="%(levelname)s: %(message)s", level=loglevel)
+    # logging.basicConfig(format="%(levelname)s: %(message)s", level=loglevel)
 
-    logging.info("You passed an argument.")
-    if(args.version):
+    if(args.link == "version"):
         version()
     elif(args.link != ""):
         print(downlaod(args))
@@ -79,10 +84,6 @@ if __name__ == '__main__':
         help="place the output into <file>.",
         metavar="ARG")
 
-    parser.add_argument(
-        "--version",
-        help="show version",
-        metavar="store_true")
 
     parser.add_argument(
         "-v",
