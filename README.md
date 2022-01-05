@@ -8,8 +8,8 @@ You can use [Github Contents API](https://developer.github.com/v3/repos/contents
 this shell command get our result
 
 ```sh
-curl https://codeload.github.com/ ***[owner]*** / ***[repo]*** /tar.gz/master | \
-tar -xz --strip=2 ***[repo]***-master/***[folder_path]***
+curl https://codeload.github.com/$(owner)/$(repo)/tar.gz/$(branch) | \
+tar -xz --strip=2 $(repo)-$(branch)/$(folder_path)
 ```
 
 
