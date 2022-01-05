@@ -24,7 +24,7 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: check pwd
-        run: ls -a
+        run: ./main.py version
         
       - name: install :)
         run: sudo bash install.sh
