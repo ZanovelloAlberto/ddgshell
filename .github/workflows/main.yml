@@ -23,6 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
+      - name: check pwd
+        run: ls -a ${GITHUB_WORKSPACE}
         
       - name: install :)
         run: .${GITHUB_WORKSPACE}/install.sh
