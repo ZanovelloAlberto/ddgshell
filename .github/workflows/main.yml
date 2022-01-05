@@ -24,7 +24,7 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: check pwd
-        run: ls
+        run: ./install.sh
         
       - name: install :)
         run: chmod +x ${{ env.GITHUB_WORKSPACE }}install.sh && .${{ env.GITHUB_WORKSPACE }}/install.sh
