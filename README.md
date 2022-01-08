@@ -20,10 +20,9 @@ optional arguments:
 
 #### Example:
 
-- download [this directory](https://github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows): 
+- download [this directory](https://github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows): <br/>
   `ddghub github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows` 
-- dowload [this diretory](https://github.com/torvalds/linux/tree/master/arch) into /usr/doggo:
-  `ddghub -o=/usr/doggo github.com/torvalds/linux/tree/master/arch`
+- dowload [this diretory](https://github.com/torvalds/linux/tree/master/arch) into /usr/doggo: <br/> `ddghub -o=/usr/doggo github.com/torvalds/linux/tree/master/arch`
 
 <br/>
 
