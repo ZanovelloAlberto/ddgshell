@@ -8,7 +8,7 @@ You can use [Github Contents API](https://developer.github.com/v3/repos/contents
 ## Get Started: Install
 
 ### Ubuntu
-run
+run into workspace dir
 
 ```
 chmod +x install.sh
