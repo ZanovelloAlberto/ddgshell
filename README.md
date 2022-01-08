@@ -1,7 +1,26 @@
 ## git directory downloader
 the target of the project is provide a github tool to download your github repo directories locally 
 
-You can use [Github Contents API](https://developer.github.com/v3/repos/contents/#get-archive-link) to get an archive link and `tar` to retrieve a specified folder.
+result if you run `ddghub --help`
+```
+usage: ddghub [-h] [-o ARG] [-v] ARG
+
+Does a thing to some stuff, epilog = 'As an alternative to the commandline,
+params can be placed in a file, one per line, and specified on the commandline
+like 'ddghub @params.conf'.
+
+positional arguments:
+  ARG                   the github link of the repo/directory.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o ARG, --outdir ARG  place the output into <file>.
+  -v, --verbose         increase output verbosity
+```
+
+#### Example:
+
+- download [this directory](https://github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows): `ddghub https://github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows` 
 
 <br/>
 
