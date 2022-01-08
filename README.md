@@ -20,7 +20,7 @@ run into your brain
 find -your way --how="dowload dependecies" && make
 ```
 
-### Quick alternative:
+## Quick alternative:
 
 Shell command to dowload repo
 
