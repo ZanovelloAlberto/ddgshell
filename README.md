@@ -2,6 +2,23 @@
 the target of the project is provide a github tool to download your github repo directories locally 
 
 You can use [Github Contents API](https://developer.github.com/v3/repos/contents/#get-archive-link) to get an archive link and `tar` to retrieve a specified folder.
+## Install
+
+### Ubuntu
+run
+
+```
+chmod +x install.sh
+./install.sh
+make
+```
+
+### Other distor / winows / MacOS
+
+run into your brain
+```
+find -your way --how="dowload dependecies" && make
+```
 
 ### Shell command to dowload repo:
 
