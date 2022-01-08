@@ -20,9 +20,9 @@ run into your brain
 find -your way --how="dowload dependecies" && make
 ```
 
-### Shell command to dowload repo:
+### Quick alternative:
 
-this shell command get our result
+Shell command to dowload repo
 
 ```sh
 curl https://codeload.github.com/$(owner)/$(repo)/tar.gz/$(branch) | \
