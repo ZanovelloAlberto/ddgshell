@@ -26,7 +26,7 @@ optional arguments:
 
 <br/>
 
-## Get Started: Install
+Install
 
 ### Ubuntu
 run into workspace dir
