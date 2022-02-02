@@ -34,7 +34,6 @@ run into workspace dir
 ```
 chmod +x install.sh
 ./install.sh
-make
 ```
 
 ### Other distor / winows / MacOS
