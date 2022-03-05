@@ -1,6 +1,9 @@
 cd
 git clone https://github.com/ZanovelloAlberto/subrepo-downloader.git
 cd subrepo-downloader
-chmod +x install.sh
-./install.sh
+
+sudo cp main.py /usr/bin/ddghub
+echo ""
+ddghub version
+
 rm -r ~/subrepo-downloader
