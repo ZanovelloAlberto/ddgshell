@@ -28,6 +28,10 @@ optional arguments:
 
 # Install
 
+```
+curl raw.githubusercontent.com/ZanovelloAlberto/subrepo-downloader/master/curl-install.sh | bash
+```
+
 ### Ubuntu
 run into workspace dir
 
