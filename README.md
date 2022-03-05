@@ -29,7 +29,7 @@ optional arguments:
 # Install
 
 ```
-curl raw.githubusercontent.com/ZanovelloAlberto/subrepo-downloader/master/curl-install.sh | bash
+curl https://raw.githubusercontent.com/ZanovelloAlberto/subrepo-downloader/master/curl-install.sh | bash
 ```
 
 ### Ubuntu
