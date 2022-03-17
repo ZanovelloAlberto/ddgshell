@@ -1,13 +1,13 @@
 ## git directory downloader
 the target of the project is provide a github tool to download your github repo directories locally 
 
-result if you run `ddghub --help`
+result if you run `subrepo --help`
 ```
-usage: ddghub [-h] [-o ARG] [-v] ARG
+usage: subrepo [-h] [-o ARG] [-v] ARG
 
 Does a thing to some stuff, epilog = 'As an alternative to the commandline,
 params can be placed in a file, one per line, and specified on the commandline
-like 'ddghub @params.conf'.
+like 'subrepo @params.conf'.
 
 positional arguments:
   ARG                   the github link of the repo/directory.
@@ -21,8 +21,8 @@ optional arguments:
 #### Example:
 
 - download [this directory](https://github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows): <br/>
-  `ddghub github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows` 
-- dowload [this diretory](https://github.com/torvalds/linux/tree/master/arch) into **"/usr/doggo"**: <br/> `ddghub -o=/usr/doggo github.com/torvalds/linux/tree/master/arch`
+  `subrepo github.com/ZanovelloAlberto/subrepo-downloader/tree/master/.github/workflows` 
+- dowload [this diretory](https://github.com/torvalds/linux/tree/master/arch) into **"/usr/doggo"**: <br/> `subrepo -o=/usr/doggo github.com/torvalds/linux/tree/master/arch`
 
 <br/>
 
