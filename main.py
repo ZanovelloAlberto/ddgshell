@@ -21,7 +21,7 @@ class bcolors:
 # --- FUNCTIONS ---
 
 def version():
-    print("""ddghub (DDGHUB) 1.0.0
+    print("""subrepo (SUBREPO) 1.0.0
 MIT License 2021.""")
 
 
