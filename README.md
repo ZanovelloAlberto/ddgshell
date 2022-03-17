@@ -1,4 +1,4 @@
-## git directory downloader
+## github directory downloader
 the target of the project is provide a github tool to download your github repo directories locally 
 
 result if you run `subrepo --help`
